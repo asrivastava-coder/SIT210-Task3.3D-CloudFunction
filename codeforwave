@@ -1,0 +1,45 @@
+int led = A1;
+int boardLed = D7;
+
+
+
+void setup() {
+    // This part is mostly the same:
+    pinMode(led,OUTPUT); // Our LED pin is output (lighting up the LED)
+    pinMode(boardLed,OUTPUT); // Our on-board LED is output as well
+
+    // Here we are going to subscribe to your buddy's event using Particle.subscribe
+    Particle.subscribe("Deakin_RIOT_SIT210_Photon_Buddy", "wave", myHandler);
+    
+   
+
+    
+
+}
+
+
+void loop() {
+   
+    
+}
+
+
+
+void myHandler(const char *event, const char *data)
+{
+    
+
+    digitalWrite(led,HIGH);
+    delay(500);
+    digitalWrite(led,LOW);
+    delay(500);
+    digitalWrite(led,HIGH);
+    delay(500);
+    digitalWrite(led,LOW);
+    delay(500);
+    digitalWrite(led,HIGH);
+    delay(500);
+    digitalWrite(led,LOW);
+    delay(500);
+    
+}
